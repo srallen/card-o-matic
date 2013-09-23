@@ -35,3 +35,28 @@
 #purple {
   background-color: purple;
 }
+/* Textures */
+.textures {
+  height:35px;
+  width:80px;
+  float:left;
+  padding: 5px;
+  margin: 3px 3px 3px;
+  cursor: pointer;
+}
+
+#paper {
+  background-image: url("../images/texture-paper.png");
+}
+
+#swirls {
+  background-image: url("../images/texture-swirls.png");
+}
+
+#circles {
+  background-image: url("../images/texture-circles.png");
+}
+
+#cloth {
+  background-image: url("../images/texture-cloth.png");
+}
