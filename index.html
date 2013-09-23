@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Codagogy Card-o-Matic</title>
+	
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+	<link rel="stylesheet" href="css/features.css" type="text/css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
+</head>
+
+
+<body>
+
+<div id='wrapper'>
+
+	<h1>Codagogy Card-o-Matic</h1>
+
+	<!-- Left side with all the controls -->
+	<div id='controls'>
+	
+		<!-- Color picker -->
+			<h2>Pick a color</h2>
+			
+					
+		<!-- Texture picture -->
+			<h2>Pick a texture</h2>
+			
+						
+		<!-- Message -->	
+			<h2>Pick a message</h2>
+			
+		
+		<!-- Recipient -->	
+			<h2>Dear...</h2>	
+			
+			
+		<!-- Sticker picker -->	
+			<h2>Click a sticker to add</h2>
+			
+			
+	</div>
+	
+	<!-- Right side with the live preview -->
+	<div id='preview'>
+	
+		<div id='card-background'>
+			<div id='canvas'>
+				<div id='message-output'></div>
+				<div id='recipient-output'></div>
+			</div>
+		</div>
+		
+		<!-- Buttons -->
+		<input type='button' id='refresh-btn' value='Start over'>
+		<input type='button' id='print-btn' value='Print'>
+	</div>
+	
+</div>
+	
+<script src="js/card-o-matic.js"></script>	
+	
+</body>
+
+</html>
