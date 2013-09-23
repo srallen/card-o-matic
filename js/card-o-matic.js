@@ -1,0 +1,3 @@
+$(.colors).onClick(function() {
+
+})
