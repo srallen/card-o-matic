@@ -39,9 +39,10 @@
 .textures {
   height:35px;
   width:80px;
+  border:1px solid #eee;
   float:left;
   padding: 5px;
-  margin: 3px 3px 3px;
+  margin-right:5px;
   cursor: pointer;
 }
 
