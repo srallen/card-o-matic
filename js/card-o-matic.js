@@ -19,4 +19,12 @@ $(".messages").click(function() {
 $("#recipient").keyup(function() {
   var recipient = $(this).val();
   $("#recipient-output").html(recipient);
+  var length = recipient.length;
+
+  if(length == 14) {
+    $("#recipient-error").html("Recipient name is too long.");
+  }
+  else {
+    $("#recipient-error").html("");
+  }
 });
