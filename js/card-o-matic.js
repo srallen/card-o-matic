@@ -15,3 +15,8 @@ $(".messages").click(function() {
   var message = label.html();
   $("#message-output").html(message);
 });
+
+$("#recipient").keyup(function() {
+  var recipient = $(this).val();
+  $("#recipient-output").html(recipient);
+});

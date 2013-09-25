@@ -70,3 +70,11 @@
   height: 40px;
   width: 100%;
 }
+
+/* Recipient output styling */
+#recipient-output {
+  text-align: center;
+  font-size: 35px;
+  height: 35px;
+  width: 100%;
+}
