@@ -42,3 +42,13 @@ $(".stickers").click(function() {
 
   sticker_picked.draggable({opacity: 0.45, containment: "#canvas" });
 });
+
+// To start over
+$("#refresh-btn").click(function() {
+  $("#canvas").css("background-color", "white");
+  $("#canvas").css("background-image", "");
+  $("#message-output").html("");
+  $(".sticker_on_card").remove();
+  $("#recipient-output").html("");
+  $("#recipient").val("");
+});
