@@ -1,14 +1,17 @@
+// To select a background color
 $(".colors").click(function() {
   var color_picked = $(this).css('background-color');
   $("#canvas").css('background-color', color_picked);
   $(".textures").css('background-color', color_picked);
 });
 
+// To select a background texture
 $('.textures').click(function() {
   var texture_picked = $(this).css('background-image');
   $("#canvas").css('background-image', texture_picked);
 });
 
+// To add a message
 $(".messages").click(function() {
   var radio_button = $(this);
   var label = radio_button.next();
@@ -16,6 +19,7 @@ $(".messages").click(function() {
   $("#message-output").html(message);
 });
 
+// To add a recipient and error handling
 $("#recipient").keyup(function() {
   var recipient = $(this).val();
   $("#recipient-output").html(recipient);
@@ -27,4 +31,11 @@ $("#recipient").keyup(function() {
   else {
     $("#recipient-error").html("");
   }
+});
+
+// To add a sticker
+$(".stickers").click(function() {
+  var sticker_picked = $(this).clone();
+
+  $("#canvas").prepend(sticker_picked);
 });
