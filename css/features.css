@@ -1,7 +1,7 @@
 /* Colors */
 .colors {
-  height:30px;
-  width:30px;
+  height: 30px;
+  width: 30px;
   float: left;
   padding: 5px;
   margin: 3px 3px 3px;
@@ -38,10 +38,10 @@
 
 /* Textures */
 .textures {
-  height:35px;
-  width:80px;
-  border:1px solid #eee;
-  float:left;
+  height: 35px;
+  width: 80px;
+  border: 1px solid #eee;
+  float: left;
   padding: 5px;
   margin-right:5px;
   cursor: pointer;
@@ -77,4 +77,13 @@
   font-size: 35px;
   height: 35px;
   width: 100%;
+}
+
+/* Cursor styling for draggable sticker */
+.stickers {
+  cursor: pointer;
+}
+
+.sticker_on_card {
+  cursor: move;
 }

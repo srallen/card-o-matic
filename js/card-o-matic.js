@@ -36,6 +36,9 @@ $("#recipient").keyup(function() {
 // To add a sticker
 $(".stickers").click(function() {
   var sticker_picked = $(this).clone();
+  sticker_picked.addClass("sticker_on_card");
 
   $("#canvas").prepend(sticker_picked);
+
+  sticker_picked.draggable({opacity: 0.45, containment: "#canvas" });
 });
