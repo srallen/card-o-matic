@@ -52,3 +52,23 @@ $("#refresh-btn").click(function() {
   $("#recipient-output").html("");
   $("#recipient").val("");
 });
+
+// To print the card
+$("#print-btn").click(function() {
+  var canvas_clone = $("#canvas").clone();
+  canvas = canvas_clone.prop("outerHTML");
+
+  var new_tab_contents = "<html>";
+  new_tab_contents += "<head>";
+  new_tab_contents += '<link rel="stylesheet" href="css/main.css" type="text/css">';
+  new_tab_contents += '<link rel="stylesheet" href="css/features.css" type="text/css">';
+  new_tab_contents += '</head>';
+  new_tab_contents += '<body>';
+  new_tab_contents += canvas;
+  new_tab_contents += '</body></html>';
+
+  var new_tab = window.open();
+  new_tab.document.open();
+  new_tab.document.write(new_tab_contents);
+  new_tab.document.close();
+});

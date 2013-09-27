@@ -86,4 +86,5 @@
 
 .sticker_on_card {
   cursor: move;
+  position: absolute;
 }
