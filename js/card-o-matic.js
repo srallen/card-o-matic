@@ -72,3 +72,21 @@ $("#print-btn").click(function() {
   new_tab.document.write(new_tab_contents);
   new_tab.document.close();
 });
+
+// Sticker search functionality
+$('#sticker-search-btn').click(function() {
+  $('#sticker-search-results').html('');
+
+  var search_term = $('#sticker-search').val();
+  var google_url = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&imgsz=medium&q=' + search_term + '&callback=?';
+
+  $.getJSON(google_url, function(data){
+      var images = data.responseData.results;
+      if(images.length > 0){
+          $.each(images, function(key, image) {
+            var new_image_element = "<img class='stickers circular' src='" + image.url + "'>";
+              $('#sticker-search-results').prepend(new_image_element);
+          });
+      }
+  });
+});
