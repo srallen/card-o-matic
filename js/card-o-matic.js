@@ -25,7 +25,7 @@ $("#recipient").keyup(function() {
   $("#recipient-output").html(recipient);
   var length = recipient.length;
 
-  if(length == 14) {
+  if(length == $(this).prop('maxLength')) {
     $("#recipient-error").html("Recipient name is too long.");
   }
   else {
@@ -34,7 +34,7 @@ $("#recipient").keyup(function() {
 });
 
 // To add a sticker
-$(".stickers").click(function() {
+$("#allstickers").on("click", "img", function() {
   var sticker_picked = $(this).clone();
   sticker_picked.addClass("sticker_on_card");
 
@@ -47,10 +47,13 @@ $(".stickers").click(function() {
 $("#refresh-btn").click(function() {
   $("#canvas").css("background-color", "white");
   $("#canvas").css("background-image", "");
+  $(".textures").css("background-color", "white");
   $("#message-output").html("");
   $(".sticker_on_card").remove();
   $("#recipient-output").html("");
   $("#recipient").val("");
+  $(".messages").prop("checked", false);
+  $("#sticker-search").val("");
 });
 
 // To print the card
@@ -58,8 +61,8 @@ $("#print-btn").click(function() {
   var canvas_clone = $("#canvas").clone();
   canvas = canvas_clone.prop("outerHTML");
 
-  var new_tab_contents = "<html>";
-  new_tab_contents += "<head>";
+  var new_tab_contents = '<html>';
+  new_tab_contents += '<head>';
   new_tab_contents += '<link rel="stylesheet" href="css/main.css" type="text/css">';
   new_tab_contents += '<link rel="stylesheet" href="css/features.css" type="text/css">';
   new_tab_contents += '</head>';
@@ -74,19 +77,25 @@ $("#print-btn").click(function() {
 });
 
 // Sticker search functionality
-$('#sticker-search-btn').click(function() {
-  $('#sticker-search-results').html('');
+$("#sticker-search-btn").click(function() {
+  $("#sticker-search-results").html("");
+  $("#search-error").html("");
 
-  var search_term = $('#sticker-search').val();
-  var google_url = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&imgsz=medium&q=' + search_term + '&callback=?';
+  var search_term = $("#sticker-search").val();
+  var google_url = "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&imgsz=medium&q=" + search_term + "&callback=?";
 
   $.getJSON(google_url, function(data){
       var images = data.responseData.results;
       if(images.length > 0){
-          $.each(images, function(key, image) {
-            var new_image_element = "<img class='stickers circular' src='" + image.url + "'>";
-              $('#sticker-search-results').prepend(new_image_element);
-          });
+        $.each(images, function(key, image) {
+          var new_image_element = "<img class='stickers circular' src='" + image.url + "'>";
+          $("#sticker-search-results").prepend(new_image_element);
+        });
+      }
+      else {
+        $("#search-error").html("No search results found.");
       }
   });
 });
+
+

@@ -75,20 +75,22 @@
 
 		<!-- Sticker picker -->
 			<h2>Click a sticker to add</h2>
-			<div>
-				<img class='stickers' src='images/sticker-green-gift.png' alt='Green gift sticker'>
-				<img class='stickers' src='images/sticker-heart.png' alt='Heart sticker'>
-				<img class='stickers' src='images/sticker-yellow-gift.png' alt='Yellow gift sticker'>
-				<img class='stickers' src='images/sticker-star.png' alt='Star sticker'>
+			<div id="allstickers">
+				<div>
+					<img class='stickers' src='images/sticker-green-gift.png' alt='Green gift sticker'>
+					<img class='stickers' src='images/sticker-heart.png' alt='Heart sticker'>
+					<img class='stickers' src='images/sticker-yellow-gift.png' alt='Yellow gift sticker'>
+					<img class='stickers' src='images/sticker-star.png' alt='Star sticker'>
+				</div>
+				<div>
+					<p>Find your own from Google!</p>
+					<input type="text" id="sticker-search">
+					<input type="button" id="sticker-search-btn" value="Search">
+					<p>Ex: "unicorns", "sparkles", "balloons"</p>
+					<div id="sticker-search-results"></div>
+					<span class="error" id="search-error"></span>
+				</div>
 			</div>
-			<div>
-				<p>Find your own from Google!</p>
-				<input type="text" id="sticker-search">
-				<input type="button" id="sticker-search-btn" value="Search">
-				<p>Ex: "unicorns", "sparkles", "balloons"</p>
-				<div id="sticker-search-results"></div>
-			</div>
-
 
 	</div>
 
